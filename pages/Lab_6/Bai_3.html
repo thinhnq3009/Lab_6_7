@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row">
+        <div class="content">
+            <div class="card">
+                <div class="card-header py-4">
+                    <h1 class="font-weight-bolder my-0">Calculate Bonus</h1>
+                </div>
+
+                <div class="card-body py-4">
+                    <form name="info" novalidate>
+                        <div class="input-group">
+                            <label class="font-weight-bold" for="fullname">Fullname</label>
+                            <input ng-model="user.fullname" name="fullname" type="text" class="" ng-required="true" />
+                            <span ng-show="info.fullname.$invalid && info.fullname.$touched" class="pl-4 text-danger mt-2"
+                                >Please enter the fullname</span
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label class="font-weight-bold" for="salary">Salary</label>
+                            <div class="form_control">
+                                <input
+                                    ng-model="user.salary"
+                                    ng-pattern="/^\d+$/"
+                                    name="salary"
+                                    type="text"
+                                    class=""
+                                    ng-required="true"
+                                />
+                                <div class="end-label">VND</div>
+                            </div>
+                            <span ng-show="info.salary.$invalid && info.salary.$touched" class="pl-4 text-danger mt-2"
+                                >Please enter the number for this field</span
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label class="font-weight-bold">Gender</label>
+                            <div class="form_control">
+                                <input
+                                    name="gender"
+                                    type="radio"
+                                    value="male"
+                                    class="ml-5"
+                                    id="male"
+                                    ng-model="user.gender"
+                                    ng-checked="true"
+                                />
+                                <label class="m-0 ml-2" for="male">Male</label>
+                                <input
+                                    name="gender"
+                                    type="radio"
+                                    value="female"
+                                    class="ml-5"
+                                    id="female"
+                                    ng-model="user.gender"
+                                />
+                                <label class="m-0 ml-2" for="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="font-weight-bold" for="age">Age</label>
+                            <select ng-model="user.age" name="" id="" ng-required="true">
+                                <option value="1">Under 25 years old</option>
+                                <option value="2">From 25 to 40 years old</option>
+                                <option value="3">Over 40 years old</option>
+                            </select>
+                            <span ng-show="info.age.$invalid && info.age.$touched" class="pl-4 text-danger mt-2"
+                                >Please choose a option</span
+                            >
+                        </div>
+
+                        <h4 ng-class="{'text-danger': info.$invalid, 'text-success': info.$valid}" class="my-2 text-center font-weight-bold">You have entered the {{info.$invalid ? "wrong" : "correct"}}</h4>
+
+                        <button ng-disabled="info.$invalid" ng-click="handleSubmit()" class="btn btn-customize w-100 my-3">
+                            Get
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card-footer py-4 text-center">
+                    <h5>
+                        {{ bonus ? ( "Your bonus is " +( bonus | currency: "VND" : 0) ) : "Please enter the information to
+                        calculate the bonus"}}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

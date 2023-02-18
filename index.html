@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="my-app" ng-controller="rootController">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thịnh Nguyễn</title>
+
+        <link rel="stylesheet" href="lib/bootstrap-4.6.2/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="lib/bootstrap-4.6.2/dist/css/form-floating.css" />
+        <link rel="stylesheet" href="lib/wow-1.1.2/animate.min.css" />
+        <link rel="stylesheet" href="style/style.css" />
+        <link rel="stylesheet" href="style/FormCheck/style.css">
+        <link rel="stylesheet" href="style/Card/style.css">
+        <link rel="stylesheet" href="style/InputGroup/style.css">
+        <link rel="stylesheet" href="style/loading.css">
+        <link rel="stylesheet" href="style/TableProduct/style.css">
+
+
+        <script src="lib/jQuery-3.5.1/jquery.slim.min.js"></script>
+        <script src="lib/bootstrap-4.6.2/dist/js/bootstrap.min.js"></script>
+        <script src="lib/wow-1.1.2/wow.min.js"></script>
+        <script src="lib/wow-1.1.2/init.js"></script>
+        <script src="lib/angularJS v1.8.2/angular.min.js"></script>
+        <script src="lib/angularJS v1.8.2/angular-route.js"></script>
+
+        <script src="app.module.js"></script>
+        <script src="app.config.js"></script>
+
+        <!-- Controller -->
+        <script src="controllers/controllerCalculateBonus.js"></script>
+        <script src="controllers/controllerSellingProducts.js"></script>
+        <script src=""></script>
+        <script src=""></script>
+        <script src=""></script>
+
+        <!-- Component -->
+        <script src="components/app-header/app-header.component.js"></script>
+        <script src="components/app-loading/app-loading.component.js"></script>
+
+
+
+    </head>
+    <body>
+        <app-header></app-header>
+
+
+        <div ng-view></div>
+
+        <app-loading ng-show="isLoading"></app-loading>
+
+    </body>
+</html>

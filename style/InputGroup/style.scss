@@ -1,0 +1,40 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    select,
+    input[type="text"] {
+        position: relative;
+        background-color: #00d4ff33;
+        border: none;
+        outline: none;
+        padding: 0.6rem 20px;
+        border-radius: 30px;
+        transition: 0.3s;
+        &:focus {
+            box-shadow: 0 0 6px #00364180;
+        }
+    }
+
+    .form_control {
+        display: flex;
+
+        position: relative;
+        select,
+        input[type="text"] {
+            flex: 1;
+            border-top-right-radius: 0;
+            background-color: #00d4ff33 ;
+            border-bottom-right-radius: 0;
+        }
+
+        .end-label {
+            height: 100%;
+            background-color: #00d4ff33;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            padding: 0.6rem 20px;
+            z-index: 99;
+        }
+    }
+}

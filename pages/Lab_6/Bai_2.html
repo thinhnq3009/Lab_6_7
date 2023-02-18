@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="content TableProduct" style="max-width: 850px !important;">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="font-weight-bolder">Tạp hoá bất ổn</h2>
+                </div>
+
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in products" ng-dblclick="item.selected = true">
+                                <th scope="row">
+                                    <input
+                                        type="checkbox"
+                                        ng-model="item.selected"
+                                        ng-click="select(item)"
+                                    />
+                                </th>
+                                <td>{{item.name}}</td>
+                                <td>
+                                    <input ng-disabled="!item.selected" type="number" ng-model="item.quantity" />
+                                </td>
+                                <td>{{item.price}}</td>
+                                <td>{{item.price * item.quantity}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="fixed-bottom p-3 px-5">
+    <div class="card">
+        <div class="card-header py-3 ">
+            <h5><span class="font-weight-bold mr-3">Total invoice:</span>{{getTotal() || "0 VND"}}</h5>
+        </div>
+    </div>
+</div>

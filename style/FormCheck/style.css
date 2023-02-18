@@ -1,0 +1,6 @@
+.ng-touched.ng-valid {
+  background-color: rgba(0, 255, 169, 0.3333333333) !important;
+}
+.ng-touched.ng-invalid {
+  background-color: rgba(255, 0, 98, 0.3333333333) !important;
+}/*# sourceMappingURL=style.css.map */
