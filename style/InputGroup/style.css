@@ -4,6 +4,8 @@
   margin-bottom: 1rem;
 }
 .input-group select,
+.input-group input[type=number],
+.input-group input[type=email],
 .input-group input[type=text] {
   position: relative;
   background-color: rgba(0, 212, 255, 0.2);
@@ -14,6 +16,8 @@
   transition: 0.3s;
 }
 .input-group select:focus,
+.input-group input[type=number]:focus,
+.input-group input[type=email]:focus,
 .input-group input[type=text]:focus {
   box-shadow: 0 0 6px rgba(0, 54, 65, 0.5019607843);
 }

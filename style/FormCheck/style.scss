@@ -1,12 +1,10 @@
 .ng-touched {
-    
-
     &.ng-valid {
         background-color: #00ffa955 !important;
     }
 
     &.ng-invalid {
         background-color: #ff006255 !important;
+        background-image: url("images/x-circle-fill.svg");
     }
-
 }

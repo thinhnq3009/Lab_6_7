@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="content">
+            <div class="card">
+                <div class="card-header py-4">
+                    <h1 class="font-weight-bolder my-0">Student information</h1>
+                </div>
+
+                <div class="card-body py-4">
+                    <form name="info" novalidate>
+                        <div class="input-group">
+                            <label class="font-weight-bold" for="fullname">Fullname</label>
+                            <input
+                                maxlength="25"
+                                ng-model="student.fullname"
+                                name="fullname"
+                                type="text"
+                                class="bai_4"
+                                ng-required="true"
+                            />
+                            <span ng-show="info.fullname.$invalid && info.fullname.$touched" class="pl-4 text-danger mt-2"
+                                >The fullname is incorrect</span
+                            >
+                        </div>
+
+                        <div class="input-group">
+                            <label class="font-weight-bold" for="marks">Marks</label>
+                            <input
+                                ng-model="student.marks"
+                                name="marks"
+                                min="0"
+                                max="10"
+                                type="number"
+                                class="bai_4"
+                                ng-required="true"
+                            />
+                            <span ng-show="info.marks.$invalid && info.marks.$touched" class="pl-4 text-danger mt-2"
+                                >The marks is incorrect</span
+                            >
+                        </div>
+
+                        <div class="input-group">
+                            <label class="font-weight-bold" for="email">Email</label>
+                            <input
+                                ng-pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/"
+                                ng-model="student.email"
+                                name="email"
+                                type="email"
+                                class="bai_4"
+                                ng-required="true"
+                            />
+                            <span ng-show="info.email.$invalid && info.email.$touched" class="pl-4 text-danger mt-2"
+                                >The email is incorrect</span
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label class="font-weight-bold" for="license">License plate</label>
+                            <input
+                                ng-pattern="/^5\d-[A-Z]\d-((\d{4})|(\d{3}\.\d{2}))$/"
+                                ng-model="student.license"
+                                name="license"
+                                type="text"
+                                class="bai_4"
+                                ng-required="true"
+                            />
+                            <span ng-show="info.license.$invalid && info.license.$touched" class="pl-4 text-danger mt-2"
+                                >The license is incorrect</span
+                            >
+                        </div>
+
+                        <h4
+                            ng-class="{'text-danger': info.$invalid, 'text-success': info.$valid}"
+                            class="my-2 text-center font-weight-bold"
+                        >
+                            You have entered the {{info.$invalid ? "wrong" : "correct"}}
+                        </h4>
+
+                        <button ng-disabled="info.$invalid" ng-click="handleSubmit()" class="btn btn-customize w-100 my-3">
+                            Get
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card-footer py-4 text-center">
+                    <h5>
+                        {{ bonus ? ( "Your bonus is " +( bonus | currency: "VND" : 0) ) : "The information is incorrect to
+                        calculate the bonus"}}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

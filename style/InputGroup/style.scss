@@ -3,6 +3,8 @@
     flex-direction: column;
     margin-bottom: 1rem;
     select,
+    input[type="number"],
+    input[type="email"],
     input[type="text"] {
         position: relative;
         background-color: #00d4ff33;
@@ -14,6 +16,8 @@
         &:focus {
             box-shadow: 0 0 6px #00364180;
         }
+
+        
     }
 
     .form_control {
@@ -24,7 +28,7 @@
         input[type="text"] {
             flex: 1;
             border-top-right-radius: 0;
-            background-color: #00d4ff33 ;
+            background-color: #00d4ff33;
             border-bottom-right-radius: 0;
         }
 

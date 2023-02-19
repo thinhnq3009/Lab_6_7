@@ -1,4 +1,6 @@
-(function () {
+
+
+!(function () {
     "use strict";
 
     angular.module("my-app", ["ngRoute"]).controller("rootController", ["$scope", "$rootScope", Controller]);

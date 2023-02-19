@@ -22,14 +22,26 @@
                 templateUrl: "pages/Lab_6/Bai_3.html",
                 controller: "controllerCalculateBonus",
             })
+            .when("/Lab_6/Bai_4", {
+                templateUrl: "pages/Lab_6/Bai_4.html",
+            })
+            .when("/Lab_6/Bai_5", {
+                templateUrl: "pages/Lab_6/Bai_5.html",
+            })
             .when("/Lab_7/Bai_1", {
                 templateUrl: "pages/Lab_7/Bai_1.html",
+                controller: "controllerProducts"
             })
             .when("/Lab_7/Bai_2", {
                 templateUrl: "pages/Lab_7/Bai_2.html",
+                controller: "controllerProducts"
             })
             .when("/Lab_7/Bai_3", {
                 templateUrl: "pages/Lab_7/Bai_3.html",
+                controller: "controllerProducts"
+            }).when("/Lab_7/Bai_4", {
+                templateUrl: "pages/Lab_7/Bai_4.html",
+                controller: "controllerProductsAdvanced"
             });
     }
 })();
